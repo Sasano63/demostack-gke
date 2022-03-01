@@ -14,7 +14,7 @@ Listeners = [
      {
         Name = "webapp"
         Namespace = "webapp"
-        Hosts = [ "webapp-cluster-1.ric.gcp.hashidemos.io"]
+        Hosts = [ "webapp-cluster-1.sasano.gcp.hashidemos.io"]
      }
    ]
  }

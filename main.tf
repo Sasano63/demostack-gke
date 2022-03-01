@@ -16,9 +16,9 @@ data "terraform_remote_state" "dns" {
 
   config = {
     hostname     = "app.terraform.io"
-    organization = "emea-se-playground-2019"
+    organization = "sasano"
     workspaces = {
-      name = "ricardo-dns-v2"
+      name = "terraform-dns-multicloud"
     }
   } //network
 }

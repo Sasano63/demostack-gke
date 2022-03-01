@@ -1,10 +1,10 @@
-terraform {
-  backend "remote" {
-    hostname     = "app.terraform.io"
-    organization = "emea-se-playground-2019"
+# terraform {
+#   backend "remote" {
+#     hostname     = "app.terraform.io"
+#     organization = "sasano"
 
-    workspaces {
-      name = "ricardo-gcp-demostack"
-    }
-  }
-}
+#     workspaces {
+#       name = "demostack-gke"
+#     }
+#   }
+# }

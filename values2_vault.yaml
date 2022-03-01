@@ -26,7 +26,7 @@ server:
     port: 8200
     targetPort: 8200
     annotations:
-      external-dns.alpha.kubernetes.io/hostname: "vault-2-server.ric.gcp.hashidemos.io"
+      external-dns.alpha.kubernetes.io/hostname: "vault-2-server.sasano.gcp.hashidemos.io"
       consul.hashicorp.com/service-sync: 'true'
 
   # extraEnvironmentVars is a list of extra enviroment variables to set with the stateful set. These could be
@@ -51,7 +51,7 @@ server:
   ha:
     enabled: true
     replicas: 3
-    apiAddr: "https://vault-2.ric.gcp.hashidemos.io:8200"
+    apiAddr: "https://vault-2.sasano.gcp.hashidemos.io:8200"
     raft:
       enabled: true
 
@@ -71,7 +71,7 @@ server:
         storage "raft" {
           path = "/vault/data"
           retry_join {
-            leader_tls_servername = "vault-2.ric.gcp.hashidemos.io"
+            leader_tls_servername = "vault-2.sasano.gcp.hashidemos.io"
             leader_ca_cert_file = "/vault/userconfig/vault-server-tls/vault.ca"
             auto_join = "provider=k8s label_selector=\"app.kubernetes.io/name=vault, component=server\""
           }
@@ -89,7 +89,7 @@ ui:
   serviceType: "LoadBalancer"
   externalPort: 8200
   annotations:
-    external-dns.alpha.kubernetes.io/hostname: "vault-2.ric.gcp.hashidemos.io"
+    external-dns.alpha.kubernetes.io/hostname: "vault-2.sasano.gcp.hashidemos.io"
   # For Added Security, edit the below
   #loadBalancerSourceRanges:
   #   - < Your IP RANGE Ex. 10.0.0.0/16 >

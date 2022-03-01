@@ -13,7 +13,7 @@ global:
     httpsOnly: false
     enableAutoEncrypt: true
     verify: false
-    serverAdditionalDNSSANs: ["consul-cluster-2.ric.gcp.hashidemos.io"]
+    serverAdditionalDNSSANs: ["consul-cluster-2.sasano.gcp.hashidemos.io"]
     caCert:
       secretName: consul-federation
       secretKey: caCert
@@ -107,7 +107,7 @@ ui:
   service:
     type: LoadBalancer
     annotations: |
-      "external-dns.alpha.kubernetes.io/hostname": "consul-cluster-2.ric.gcp.hashidemos.io."
+      "external-dns.alpha.kubernetes.io/hostname": "consul-cluster-2.sasano.gcp.hashidemos.io."
 meshGateway:
   enabled: true
   wanAddress:
@@ -126,11 +126,11 @@ ingressGateways:
     - name: dashboard-ingress-gateway
       service:
         annotations: |
-          external-dns.alpha.kubernetes.io/hostname: "dashboard-cluster-2.ric.gcp.hashidemos.io"
+          external-dns.alpha.kubernetes.io/hostname: "dashboard-cluster-2.sasano.gcp.hashidemos.io"
     - name: webapp-cluster-2-ig
       service:
         annotations: |
-          external-dns.alpha.kubernetes.io/hostname: "webapp-cluster-2.ric.gcp.hashidemos.io"
+          external-dns.alpha.kubernetes.io/hostname: "webapp-cluster-2.sasano.gcp.hashidemos.io"
 
 terminatingGateways:
   enabled: false

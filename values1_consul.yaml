@@ -14,7 +14,7 @@ global:
     httpsOnly: false
     enableAutoEncrypt: true
     verify: false
-    serverAdditionalDNSSANs: ["consul-cluster-1.ric.gcp.hashidemos.io"]
+    serverAdditionalDNSSANs: ["consul-cluster-1.sasano.gcp.hashidemos.io"]
   acls:
     manageSystemACLs: true
     createReplicationToken: true
@@ -105,7 +105,7 @@ ui:
   service:
     type: LoadBalancer
     annotations: |
-      "external-dns.alpha.kubernetes.io/hostname": "consul-cluster-1.ric.gcp.hashidemos.io"
+      "external-dns.alpha.kubernetes.io/hostname": "consul-cluster-1.sasano.gcp.hashidemos.io"
 meshGateway:
   enabled: true
   wanAddress:
@@ -126,19 +126,19 @@ ingressGateways:
         annotations: |
           prometheus.io/scrape: "true"
           prometheus.io/port: "9102"
-          external-dns.alpha.kubernetes.io/hostname: "dashboard-cluster-1.ric.gcp.hashidemos.io"
+          external-dns.alpha.kubernetes.io/hostname: "dashboard-cluster-1.sasano.gcp.hashidemos.io"
     - name: webapp-cluster-1-ig
       service:
         annotations: |
           prometheus.io/scrape: "true"
           prometheus.io/port: "9102"
-          external-dns.alpha.kubernetes.io/hostname: "webapp-cluster-1.ric.gcp.hashidemos.io"
+          external-dns.alpha.kubernetes.io/hostname: "webapp-cluster-1.sasano.gcp.hashidemos.io"
     - name: all-ingress-gateway
       service:
         annotations: |
           prometheus.io/scrape: "true"
           prometheus.io/port: "9102"
-          external-dns.alpha.kubernetes.io/hostname: "all.ric.gcp.hashidemos.io"
+          external-dns.alpha.kubernetes.io/hostname: "all.sasano.gcp.hashidemos.io"
 
 terminatingGateways:
   enabled: true
